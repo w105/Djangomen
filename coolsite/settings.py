@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os.path
 from pathlib import Path
 import dj_database_url
+import django_heroku
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -129,5 +130,5 @@ MEDIA_URL = '/media/'
 # LOGIN_REDIRECT_URL = '/'
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
+django_heroku.settings(locals())
 CSRF_TRUSTED_ORIGINS = ['https://deploydjangomen.herokuapp.com/']
