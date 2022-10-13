@@ -1,1 +1,0 @@
-web: gunicorn Djangomen.wsgi --log-file

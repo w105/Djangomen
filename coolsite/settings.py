@@ -80,8 +80,9 @@ DATABASES = {
     #     'NAME': 'db_django',
     #     'USER': 'q105',
     #     'PASSWORD': '1234',
-    #     'HOST': '#',  # Or an IP Address that your DB is hosted on
+    #     'HOST': '127.0.0.1',  # Or an IP Address that your DB is hosted on
     #     'PORT': '5432',
+    # }
     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 # Password validation
