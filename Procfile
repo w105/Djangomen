@@ -1,1 +1,1 @@
-web gunicorn Djangomen.wsgi:application --log-file -
+web gunicorn deploydjangomen.wsgi:application --log-file -
