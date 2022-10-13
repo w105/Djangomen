@@ -1,1 +1,1 @@
-web: gunicorn Djangomen.wsgi
+web: gunicorn coolsite.wsgi
