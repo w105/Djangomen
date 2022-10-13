@@ -76,15 +76,15 @@ WSGI_APPLICATION = 'coolsite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_django',
-        'USER': 'q105',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',  # Or an IP Address that your DB is hosted on
-        'PORT': '5432',
-    }
-    # 'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'db_django',
+    #     'USER': 'q105',
+    #     'PASSWORD': '1234',
+    #     'HOST': '127.0.0.1',  # Or an IP Address that your DB is hosted on
+    #     'PORT': '5432',
+    # }
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
