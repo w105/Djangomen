@@ -14,18 +14,19 @@ from pathlib import Path
 import dj_database_url
 import django_heroku
 
-db_from_env = dj_database_url.config(conn_max_age=500)
+# db_from_env = dj_database_url.config(conn_max_age=500)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp'
-SECRET_KEY = os.environ.get('SECRET_KEY', 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp')
+SECRET_KEY = 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp'
+# SECRET_KEY = os.environ.get('SECRET_KEY', 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'coolsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
