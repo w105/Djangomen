@@ -9,10 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import os
+import os.path
 from pathlib import Path
-
-
 import dj_database_url
 
 db_from_env = dj_database_url.config(conn_max_age=500)
@@ -26,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp'
 SECRET_KEY = os.environ.get('SECRET_KEY', 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp')
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-ALLOWED_HOSTS = ['deploydjangomen.herokuapp.com', '127.0.0.1']
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -83,7 +81,7 @@ DATABASES = {
         'NAME': 'db_django',
         'USER': 'q105',
         'PASSWORD': '1234',
-        'HOST': '*',  # Or an IP Address that your DB is hosted on
+        'HOST': '127.0.0.1',  # Or an IP Address that your DB is hosted on
         'PORT': '5432',
     }
 }
@@ -131,3 +129,5 @@ MEDIA_URL = '/media/'
 # LOGIN_REDIRECT_URL = '/'
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CSRF_TRUSTED_ORIGINS = ['https://deploydjangomen.herokuapp.com/']
