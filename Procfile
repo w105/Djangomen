@@ -1,1 +1,1 @@
-web gunicorn deploydjangomen.wsgi:application --log-file -
+web: python manage.py runserver
