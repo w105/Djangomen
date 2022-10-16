@@ -26,7 +26,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp'
 # SECRET_KEY = os.environ.get('SECRET_KEY', 'plk8bcv@oy$o4asp2100ymrv(0y$&qy5#oh-i($2s=j4fa4uvp')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
